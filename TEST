@@ -4,7 +4,7 @@ Chatlogs = true
 LowGFX = false
 NoShadows = true
 --default
---fling
+--ragdool
 
 local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))()
 local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))()
@@ -13483,7 +13483,7 @@ end
 
 
 
-if game.PlaceId == 9848789324  then 
+if game.PlaceId == 7314148798  then 
 
 			local tab = window:NewTab({
 			Logo = 7072980796
