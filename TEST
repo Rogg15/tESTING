@@ -1,15 +1,35 @@
-for i,v in pairs(game.Players.LocalPlayer:FindFirstChildOfClass("Backpack"):GetDescendants()) do
-    if v:IsA("Tool") or v:IsA("HopperBin") then
-        v.Parent = game.Players.LocalPlayer.Character
-    end
-end
 
-for i,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
-   if v:IsA("Tool") then
-       v.Parent = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
-       v.GripPos = Vector3.new(0, -10000, 1)
 
-       v.Handle.Massless = true
-       v.Parent = game.Players.LocalPlayer.Character
-   end
-end
+				local cmdp = game:GetService("Players")
+				local cmdlp = cmdp.LocalPlayer
+				
+				for i,player in pairs(cmdlp.Character:GetChildren()) do
+					if player.ClassName == "Part" then
+						player.CustomPhysicalProperties = PhysicalProperties.new(math.huge,math.huge,math.huge,math.huge,math.huge)
+					end
+				end
+				game.Players.LocalPlayer.Character:FindFirstChild("Falling down").Disabled = true
+				game.Players.LocalPlayer.Character:FindFirstChild("Pushed").Disabled = true
+				game.Players.LocalPlayer.Character:FindFirstChild("StartRagdoll").Disabled = true
+
+				game.Players.LocalPlayer.Character:FindFirstChild("KillScript").Disabled = true
+				game.Players.LocalPlayer.Character:FindFirstChild("FirstPerson").Disabled = true
+				game.Players.LocalPlayer.Character:FindFirstChild("Swimming").Disabled = true
+				game.Players.LocalPlayer.Character:FindFirstChild("RagdollMe").Disabled = true
+
+				local bambam = Instance.new("BodyThrust")
+				bambam.Parent = game.Players.LocalPlayer.Character.HumanoidRootPart
+				bambam.Force = Vector3.new(0,0,0)
+				bambam.Location = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+				game.Players.LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyThrust").Name = ""
+
+				local bambam = Instance.new("BodyVelocity")
+				bambam.Parent = game.Players.LocalPlayer.Character.HumanoidRootPart
+				game.Players.LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyVelocity").Name = ""
+				bambam.MaxForce = Vector3.new(0,0,0)
+				bambam.Location = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+
+
+
+
+loadstring(game:HttpGet("https://pastebin.com/raw/zqyDSUWX"))()
