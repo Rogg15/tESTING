@@ -31,5 +31,68 @@
 
 
 
-wait(2)
-loadstring(game:HttpGet("https://pastebin.com/raw/zqyDSUWX"))()
+wait(4)
+				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-15.251590728759766, 220.0105438232422, -215.98944091796875)
+				game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
+			 
+			 
+				_G.GivePotion = game.Players.LocalPlayer.Character.HumanoidRootPart.Position   
+			 local bambam = Instance.new("BodyVelocity")
+			 bambam.Parent = game.Players.LocalPlayer.Character:FindFirstChild("Hat1")
+			 bambam.MaxForce = Vector3.new(4000,4000,4000)
+			 
+			 
+			 
+			 local bambam = Instance.new("BodyGyro")
+			 bambam.Parent = game.Players.LocalPlayer.Character:FindFirstChild("Hat1")
+			 
+			 wait()
+				loadstring(game:HttpGet('https://github.com/DigitalityScripts/roblox-scripts/raw/main/hat%20resize'))()
+			 
+				game.StarterGui:SetCore("SendNotification", 
+				{Title = "Rayzor X Premium",
+					Text = "Feature Enabled!",
+					Icon = "rbxassetid://505845268", 
+					Duration = 5,
+					Button1 = "Okay!"})
+			 wait(1)
+			 
+				local Loop
+				local loopFunction = function()
+			 
+				   local v = game.Players.LocalPlayer.Character:FindFirstChild("Hat Fling Made BY BLUECAT")
+				   if v then v.Name = "HumanoidRootPart"
+					   wait()
+				   end
+				   
+			 
+				  
+				   for _,v in pairs(game:GetService('Players'):GetChildren()) do
+								   if v.Character  then
+									   if (v.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).Magnitude <= 510  then
+									   
+			 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character:FindFirstChild("HumanoidRootPart").CFrame
+									   
+			 wait(.1)
+									   
+			 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(_G.GivePotion)
+			 end
+			 end
+			 
+			 end
+				end
+				local Start = function()
+				   Loop = game:GetService("RunService").Heartbeat:Connect(loopFunction);
+				end;
+				local Pause = function()
+				   Loop:Disconnect()
+				
+				
+				
+				
+				end;
+				Start()	
+				loadstring(game:HttpGet('https://gist.githubusercontent.com/1BlueCat/544f7efbe88235666b5b7add65b7344d/raw/f20804bb85542dcc3bc938982e1f05b7ff05cded/FE%2520Hat%2520Fling'))()
+			   
+				repeat wait() until game.Players.localPlayer.CharacterAdded:Wait()
+				Pause()
